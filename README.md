@@ -22,4 +22,10 @@ git ssh key in settings
 
 git config --global user.name "name name"
 git config --global user.email "name@domain.com"
+
+git add .
+
+git commit -m "comment"
+
+ git push origin main
  
