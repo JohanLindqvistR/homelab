@@ -28,4 +28,9 @@ git add .
 git commit -m "comment"
 
  git push origin main
+
+ssh alias
+ alias ssha='eval $(ssh-agent) && ssh-add'
+
+
  
