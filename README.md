@@ -17,4 +17,9 @@ save as ansible
 ssh-copy-id -i ~/.ssh/id_ed25519.pub 192.168.100.10
 
 ssh-copy-id -i ~/.ssh/ansible.pub 192.168.100.10
+
+git ssh key in settings
+
+git config --global user.name "name name"
+git config --global user.email "name@domain.com"
  
