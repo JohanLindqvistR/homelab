@@ -1,0 +1,6 @@
+https://technotim.live/posts/keepalived-ha-loadbalancer/
+
+apt update
+install packages
+copy fiels
+start service

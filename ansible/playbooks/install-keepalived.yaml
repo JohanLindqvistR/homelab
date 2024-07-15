@@ -1,0 +1,31 @@
+---
+- name: Install keepalived
+  hosts: keepalived
+  become: true
+
+  tasks:
+    - name: create directory
+      file:
+        path: /etc/keepalived/
+        state: directory
+        mode: 0644
+
+    - name: Copy conf files
+      ansible.builtin.copy:
+        src: "{{ conf_file }}"
+        dest: /etc/keepalived/keepalived.conf
+        owner: draup
+        group: draup
+        mode: 0644
+
+    - name: Install Keepalived
+      ansible.builtin.apt:
+        name:
+        - keepalived
+        - libipset13
+        state: present
+
+    - name: Make sure keepalived is started
+      ansible.builtin.systemd_service:
+        state: started
+        name: keepalived.service
