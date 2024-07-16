@@ -1,0 +1,2 @@
+curl -L https://raw.githubusercontent.com/JohanLindqvistR/homelab/main/docker_compose/portainer/portainer-agent-stack.yaml -o portainer-agent-stack.yaml
+docker stack deploy -c portainer-agent-stack.yaml portainer
