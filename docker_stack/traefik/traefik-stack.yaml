@@ -18,11 +18,12 @@ services:
       # - cf_api_token
     #env_file: /appdata/swarm/stacks/traefik/.env # use .env
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/localtime:/etc/localtime
+      - /var/run/docker.sock:/var/run/docker.sock
       - type: bind
         source: /appdata/swarm/data/traefik/traefik.yml
-        target: /traefik.yml:ro
+        target: /traefik.yml
+        read_only: true
       - type: bind
         source: /appdata/swarm/data/traefik/acme.json
         target: /acme.json
