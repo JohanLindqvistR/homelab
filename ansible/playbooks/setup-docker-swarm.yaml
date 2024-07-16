@@ -14,12 +14,12 @@
     # - name: Prints ad addr
     #   ansible.builtin.debug:
     #     msg:
-    #     - "{{ advertise_addr }}"
-
+    #     - "{{ ansible_become_user }}"
+      
     - name: check/init swarm
-      docker_swarm:
+      community.docker.docker_swarm:
         state: present
-        advertise_addr: "{{ advertise_addr }}"
+        advertise_addr: 192.168.100.10:2377
       register: __output_swarm
       when: inventory_hostname in groups['managers'][0]
 

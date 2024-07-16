@@ -1,4 +1,5 @@
 ---
+
 - name: Install docker
   hosts: all
   become: true
@@ -35,8 +36,9 @@
           - docker-buildx-plugin
           - docker-compose-plugin
           - python3-docker
+          - python3-requests
         update_cache: true
-
+    
     - name: start docker
       service:
         name: docker
