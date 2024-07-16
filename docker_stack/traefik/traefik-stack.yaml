@@ -1,3 +1,5 @@
+version: '3.2'
+
 services:
   proxy:
     image: traefik:latest
@@ -14,7 +16,7 @@ services:
       TRAEFIK_DASHBOARD_CREDENTIALS: ${TRAEFIK_DASHBOARD_CREDENTIALS}
       # secrets:
       # - cf_api_token
-    env_file: .env # use .env
+    env_file: /appdata/swarm/stacks/traefik/.env # use .env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
