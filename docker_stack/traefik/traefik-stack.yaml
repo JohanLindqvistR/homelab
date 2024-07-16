@@ -1,7 +1,6 @@
 services:
   traefik:
     image: traefik:v3.0
-    container_name: traefik
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
@@ -22,9 +21,15 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /appdata/swarm/data/traefik/traefik.yml:/traefik.yml:ro
-      - /root/docker_data/traefik/data/acme.json:/acme.json
-      - /root/docker_data/traefik/data/config.yml:/config.yml:ro
+      - type: bind
+        source: /appdata/swarm/data/traefik/traefik.yml
+        target: /traefik.yml:ro
+      - type: bind
+        source: /appdata/swarm/data/traefik/acme.json
+        target: /acme.json
+      #- /appdata/swarm/data/traefik/traefik.yml:/traefik.yml:ro
+      #- /appdata/swarm/data/traefik/acme.json:/acme.json
+      #-  /appdata/swarm/data/traefik/config.yml:/config.yml:ro
     labels:
       - traefik.enable=true
       - traefik.http.routers.traefik.entrypoints=http
