@@ -21,7 +21,7 @@ services:
       - /etc/localtime:/etc/localtime
       - /var/run/docker.sock:/var/run/docker.sock
       - type: bind
-        source: /appdata/swarm/data/traefik/traefik.yml
+        source: /root/opt/traefik/traefik.yml
         target: /traefik.yml
         read_only: true
       - type: bind
