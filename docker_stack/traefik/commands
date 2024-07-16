@@ -1,2 +1,2 @@
-curl -L https://raw.githubusercontent.com/JohanLindqvistR/homelab/main/docker_stack/portainer/portainer-agent-stack.yaml -o portainer-agent-stack.yaml
-docker stack deploy -c portainer-agent-stack.yaml portainer
+curl -L https://raw.githubusercontent.com/JohanLindqvistR/homelab/main/docker_stack/traefik/traefik-stack.yaml -o traefik-stack.yaml
+docker stack deploy -c traefik-stack.yaml traefik
