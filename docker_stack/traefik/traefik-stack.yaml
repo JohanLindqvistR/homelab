@@ -46,6 +46,7 @@ services:
       - traefik.http.routers.traefik-secure.tls.domains[0].main=home.draups.com
       - traefik.http.routers.traefik-secure.tls.domains[0].sans=*.home.draups.com
       - traefik.http.routers.traefik-secure.service=api@internal
+      - traefik.http.services.traefik-secure.loadbalancer.server.port=8080
     deploy:
       mode: replicated
       replicas: 1
