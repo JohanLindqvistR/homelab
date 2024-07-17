@@ -22,7 +22,7 @@ services:
       - "8000:8000"
     volumes:
       - type: bind
-        source: /appdata/swarm/data/portainer
+        source: /mnt/data/portainer
         target: /data
     networks:
       - agent_network
