@@ -27,8 +27,8 @@ services:
         target: /traefik.yml
         read_only: true
       - type: bind
-        source: /certificates/acme.json
-        target: /acme.json
+        source: /certificates/
+        target: /certs
       #- /appdata/swarm/data/traefik/traefik.yml:/traefik.yml:ro
       #- /appdata/swarm/data/traefik/acme.json:/acme.json
       #-  /appdata/swarm/data/traefik/config.yml:/config.yml:ro
