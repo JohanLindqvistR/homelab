@@ -1,0 +1,31 @@
+- name: mount cert nfs
+  hosts: all
+  become: true
+  vars:
+    mynfs: "192.168.1.202:/mnt/DataStore/Certs"
+    mountpoint: "/certs"
+    permission: '0600'
+    myopts: 'rw,sync'
+  tasks:
+    - name: utility present
+      ansible.builtin.apt:
+        name:
+          - nfs-common
+          - nfs4-acl-tools
+        state: present
+
+    - name: check mountpoint exist
+      ansible.builtin.file:
+        path: "{{ mountpoint }}"
+        state: directory
+        mode: "{{ permission }}"
+        owner: draup
+        group: draup
+
+    - name: mount network share
+      ansible.posix.mount:
+        src: "{{ mynfs }}"
+        path: "{{ mountpoint }}"
+        fstype: nfs
+        opts: "{{ myopts }}"
+        state: mounted
