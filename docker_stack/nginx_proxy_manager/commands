@@ -1,0 +1,2 @@
+curl -L https://raw.githubusercontent.com/JohanLindqvistR/homelab/main/docker_stack/nginx_proxy_manager/npm-stack.yaml -o portainer-agent-stack.yaml
+docker stack deploy -c npm-stack.yaml nginx-proxy-manager
