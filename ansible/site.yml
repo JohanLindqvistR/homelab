@@ -1,0 +1,32 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: update repository index (Ubuntu)
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+
+
+- hosts: all
+  become: true
+  roles:
+    - base
+
+- hosts: keepalived
+  become: true
+  roles:
+    - keepalived
+
+- hosts: managers
+  become: true
+  roles:
+    - managers
+
+# - hosts: workers
+#   become: true
+#   roles:
+#      - workers
