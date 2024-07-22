@@ -2,8 +2,9 @@
 
 - hosts: all
   become: true
-  pre_tasks:
+  vars_files: vault/vars.yaml
 
+  pre_tasks:
   - name: update repository index (Ubuntu)
     tags: always
     apt:
