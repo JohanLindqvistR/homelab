@@ -1,0 +1,22 @@
+- name: remove all old mounts
+  hosts: all
+  become: true
+  
+  tasks:
+    - name: remove certs nfs mount
+      ansible.posix.mount:
+        src: "192.168.1.202:/mnt/DataStore/Certs"
+        path: "/certs"
+        state: absent
+
+    - name: remove appdata nfs mount
+      ansible.posix.mount:
+        src: "192.168.1.202:/mnt/DataStore/AppData"
+        path: "/appdata"
+        state: absent
+
+    - name: remove certs smb mount
+      ansible.posix.mount:
+        src: "//192.168.1.202/Certificates"
+        path: "/certificates"
+        state: absent
