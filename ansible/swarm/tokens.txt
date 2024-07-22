@@ -1,5 +1,5 @@
 worker
-docker swarm join --token SWMTKN-1-2km16pfnfirtuw0v2x76dn3uirgkh4y01fjtmkobo6xuk0xmcw-aeisdiip0vtwel3tbraz2t6on 192.168.100.10:2377
+docker swarm join --token join_token 192.168.100.10:2377
 
 manager
-docker swarm join --token SWMTKN-1-2km16pfnfirtuw0v2x76dn3uirgkh4y01fjtmkobo6xuk0xmcw-3vswhh2wx120i8puk09xns4nw 192.168.100.10:2377
+docker swarm join --token manager_token 192.168.100.10:2377
