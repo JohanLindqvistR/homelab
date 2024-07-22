@@ -1,2 +1,2 @@
-- include_tasks: install-docker.yaml
-- include_tasks: install-qemu-agent.yaml
+- import_tasks: install-docker.yaml
+- import_tasks: install-qemu-agent.yaml
