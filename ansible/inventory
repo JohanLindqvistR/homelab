@@ -2,6 +2,10 @@
 draupswarm1.local advertise_addr=192.168.100.10:2377
 draupswarm2.local advertise_addr=192.168.100.11:2377
 
+[workers]
+draupworker1.local
+draupworker2.local
+
 [keepalived]
 draupswarm1.local conf_file=keepalived_master.conf
 draupswarm2.local conf_file=keepalived_backup.conf
