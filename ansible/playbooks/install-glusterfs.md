@@ -43,4 +43,4 @@ df -h
 
 adding m0ore briks
 
-gluster volume add-brick prod-gfs replica (current +brick) draupswarm x:/gluster/volumes
+gluster volume add-brick prod-gfs replica 3 draupworker1:/gluster/volumes
