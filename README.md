@@ -33,4 +33,17 @@ ssh alias
  alias ssha='eval $(ssh-agent) && ssh-add'
 
 
+ # set ansible
+ ansible-playbook playbooks/setup-user.yaml 
+
+
+
+update servers
+ansible-playbook playbooks/apt-update.yaml
+
+check if boor is needed
+ansible-playbook playbooks/reboot-required.yaml
+
+
+
  
