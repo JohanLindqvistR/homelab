@@ -63,7 +63,7 @@ services:
       - TZ='Europe/Stockholm'
     volumes:
       - /mnt/data/sonarr:/config
-      - /downloads/tvseries:/tv #optional
+      - /downloads/tv:/tv #optional
       - /downloads:/downloads #optional
     ports:
       - 8989:8989
