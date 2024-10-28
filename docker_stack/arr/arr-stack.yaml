@@ -34,6 +34,16 @@ services:
       placement:
         constraints: [node.role == worker]
 
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - TZ='Europe/Stockholm'
+    volumes:
+      - /mnt/data/prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
 
 networks:
   arr_network:
