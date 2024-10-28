@@ -44,12 +44,40 @@ services:
     ports:
       - 9696:9696
     restart: unless-stopped
-    
+
+    networks:
+      - arr_network
+
     deploy:
       mode: replicated
       replicas: 1
       placement:
         constraints: [node.role == worker]
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ='Europe/Stockholm'
+    volumes:
+      - /mnt/data/sonarr:/config
+      - /downloads/tvseries:/tv #optional
+      - /downloads:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+    networks:
+      - arr_network
+
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
+
 networks:
   arr_network:
     driver: overlay
