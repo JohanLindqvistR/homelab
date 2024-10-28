@@ -1,37 +1,38 @@
 version: "3"
 
 services:
-  app:
-    image: containrrr/shepherd
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
     environment:
-      TZ: 'Europe/Stockholm'
-      FILTER_SERVICES: ''
-      IGNORELIST_SERVICES: "test"
-      RUN_ONCE_AND_EXIT: "true"
+      # - PUID=1000
+      # - PGID=1000
+      - TZ='Europe/Stockholm'
+      - WEBUI_PORT=8090
+      - TORRENTING_PORT=6881
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    deploy:
-      replicas: 0
-      restart_policy:
-        condition: none
-      labels:
-        - swarm.cronjob.enable=true
-        # Start service every day at 4 am
-        - swarm.cronjob.schedule=0 0 4 * * *
-        - swarm.cronjob.skip-running=true
-      placement:
-        constraints:
-          - node.role == manager
+      - type: bind
+        source: /mnt/data/qbittorrent
+        target: /config
+      - type: bind
+        source: /downloads
+        target: /downloads #optional
+    ports:
+      - 8090:8090
+      - 6881:6881
+      - 6881:6881/udp
+    networks:
+      - arr_network
+    restart: unless-stopped
 
-  scheduler:
-    image: crazymax/swarm-cronjob:latest
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    environment:
-      - "TZ=Europe/Stockholm"
-      - "LOG_LEVEL=info"
-      - "LOG_JSON=false"
     deploy:
+      mode: replicated
+      replicas: 1
       placement:
-        constraints:
-          - node.role == manager
+        constraints: [node.role == worker]
+
+
+networks:
+  arr_network:
+    driver: overlay
+    attachable: true
