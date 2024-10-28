@@ -44,7 +44,12 @@ services:
     ports:
       - 9696:9696
     restart: unless-stopped
-
+    
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
 networks:
   arr_network:
     driver: overlay
