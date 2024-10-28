@@ -37,6 +37,9 @@ ssh alias
  ansible-playbook playbooks/setup-user.yaml 
 
 
+run ansible
+ansible-playbook site.yml
+
 
 update servers
 ansible-playbook playbooks/apt-update.yaml
