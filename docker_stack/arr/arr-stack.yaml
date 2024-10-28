@@ -11,12 +11,15 @@ services:
       - WEBUI_PORT=8090
       - TORRENTING_PORT=6881
     volumes:
-      - type: bind
-        source: /mnt/data/qbittorrent
-        target: /config
-      - type: bind
-        source: /downloads
-        target: /downloads #optional
+      # - type: bind
+      #   source: /mnt/data/qbittorrent
+      #   target: /config
+      # - type: bind
+      #   source: /downloads
+      #   target: /downloads #optional
+      - /mnt/data/qbittorrent:/config
+      - /downloads:/downloads
+
     ports:
       - 8090:8090
       - 6881:6881
