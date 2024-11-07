@@ -14,7 +14,7 @@
 
 - name: mount network share
   ansible.posix.mount:
-    src: "//192.168.1.202/Downloads"
+    src: "//192.168.1.125/downloads"
     path: "/downloads"
     fstype: cifs
     opts: 'rw,vers=3,file_mode=0600,dir_mode=0700,credentials=/mnt/data/smb/smb.txt'
