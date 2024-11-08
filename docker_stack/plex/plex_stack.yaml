@@ -1,0 +1,27 @@
+---
+version: "3.2"
+
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ='Europe/Stockholm'
+      - VERSION=docker
+      - PLEX_CLAIM=claim-ymWXJqyz25CmBWySJ3Lj #optional
+    volumes:
+      - /mnt/data/plex::/config
+      - /downloads/tv:/tv
+      - /downloads/movies:/movies
+      - /downloads/other:/other
+    restart: unless-stopped
+    
+
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
