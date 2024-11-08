@@ -13,7 +13,7 @@ services:
       - VERSION=docker
       - PLEX_CLAIM=claim-ymWXJqyz25CmBWySJ3Lj #optional
     volumes:
-      - /mnt/data/plex::/config
+      - /mnt/data/plex:/config
       - /downloads/tv:/tv
       - /downloads/movies:/movies
       - /downloads/other:/other
