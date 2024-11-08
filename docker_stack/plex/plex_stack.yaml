@@ -11,7 +11,7 @@ services:
       - PGID=0
       - TZ='Europe/Stockholm'
       - VERSION=docker
-      - PLEX_CLAIM=claim-ymWXJqyz25CmBWySJ3Lj #optional
+      - PLEX_CLAIM= #optional
     volumes:
       - /mnt/data/plex:/config
       - /downloads/tv:/tv
