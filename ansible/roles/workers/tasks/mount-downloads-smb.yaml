@@ -1,11 +1,11 @@
 - name: utility present
-  ansible.builtin.apt:
+  apt:
     name:
       - cifs-utils
     state: present
 
 - name: check mountpoint exist
-  ansible.builtin.file:
+  file:
     path: "/downloads"
     state: directory
     mode: '0777'
@@ -13,7 +13,7 @@
     group: 1000
 
 - name: mount network share
-  ansible.posix.mount:
+  mount:
     src: "//192.168.1.25/downloads"
     path: "/downloads"
     fstype: cifs
