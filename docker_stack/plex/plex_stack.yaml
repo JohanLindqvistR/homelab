@@ -31,8 +31,8 @@ services:
       - 32412:32412/udp
       - 32413:32413/udp
       - 32414:32414/udp
-  # devices:
-  #   - /dev/dri:/dev/dri # for hardware transcoding
+    devices:
+      - /dev/dri:/dev/dri # for hardware transcoding
     deploy:
       mode: replicated
       replicas: 1
