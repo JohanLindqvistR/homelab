@@ -34,6 +34,10 @@ ssh alias
 
 
  # set ansible
+ 
+ansible-playbook playbooks/setup-user.yaml -K -u draup
+
+
  ansible-playbook playbooks/setup-user.yaml 
 
 
