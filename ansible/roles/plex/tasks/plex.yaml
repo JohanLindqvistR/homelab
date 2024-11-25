@@ -1,0 +1,24 @@
+- name: Install apt-transport-https
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: Add Plex apt key (Ubuntu & Debian with systemd)
+  get_url:
+    url: https://downloads.plex.tv/plex-keys/PlexSign.key
+    dest: /etc/apt/keyrings/plexmediaserver.asc
+    mode: "0644"
+    force: true
+
+- name: Add Plex apt repo (Ubuntu & Debian with systemd)
+  apt_repository:
+    repo: deb [signed-by=/etc/apt/keyrings/plexmediaserver.asc] https://downloads.plex.tv/repo/deb public main
+    state: present
+    filename: plexmediaserver
+
+- name: Apt install Plex
+  apt:
+    name: plexmediaserver
+    state: present
+    update_cache: true
+  notify: restart plex
