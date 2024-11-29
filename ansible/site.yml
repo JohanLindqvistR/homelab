@@ -31,3 +31,8 @@
   become: true
   roles:
      - workers
+
+- hosts: plex
+  become: true
+  roles:
+     - plex
