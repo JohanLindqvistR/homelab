@@ -24,10 +24,10 @@ services:
       #- ./data:/data
       #- ./letsencrypt:/etc/letsencrypt
       - type: bind
-        source: /mnt/settings/certs
+        source: /mnt/data/certs
         target: /etc/letsencrypt
       - type: bind
-        source: /mnt/settings/npm
+        source: /mnt/data/npm
         target: /data
         
     deploy:
