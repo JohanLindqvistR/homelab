@@ -1,3 +1,7 @@
+- name: include vault
+  ansible.builtin.include_vars:
+    file: vault.yml
+
 - name: utility present
   apt:
     name:
@@ -5,17 +9,17 @@
     state: present
 
 - name: check mountpoint exist
-  file:
-    path: "/downloads"
+  ansible.builtin.file:
+    path: "{{ mountpoint }}"
     state: directory
-    mode: '0777'
-    owner: 0
-    group: 0
-
-- name: mount network share
-  mount:
-    src: "//192.168.1.25/downloads"
-    path: "/downloads"
+    mode: '0755'
+    owner: root
+    group: root
+        
+- name: Mount network share
+  ansible.posix.mount:
+    src: "{{ uri }}"
+    path: "{{ mountpoint }}"
     fstype: cifs
-    opts: 'rw,vers=3,file_mode=0600,dir_mode=0700,credentials=/mnt/data/smb/smb.txt'
+    opts: 'username={{ username }},password={{ password }}'
     state: mounted

@@ -51,6 +51,14 @@ ansible-playbook playbooks/apt-update.yaml
 check if boor is needed
 ansible-playbook playbooks/reboot-required.yaml
 
+# new server
 
+# add keys to server
+ssh-copy-id -i ~/.ssh/id_ed25519.pub 192.168.100.10
+ssh-copy-id -i ~/.ssh/ansible.pub 192.168.100.10
 
+mkdir /mnt/settings
+# in /etc/fstab
+//192.168.1.25/settings /mnt/settings cifs username=localuser,password=<pwd in keeper> 0 0
+sudo mount -a
  
