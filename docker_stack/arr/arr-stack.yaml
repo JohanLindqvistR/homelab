@@ -17,7 +17,7 @@ services:
       # - type: bind
       #   source: /downloads
       #   target: /downloads #optional
-      - /mnt/data/qbittorrent:/config
+      - /appdata/qbittorrent:/config
       - /downloads:/downloads
 
     ports:
@@ -40,7 +40,7 @@ services:
     environment:
       - TZ='Europe/Stockholm'
     volumes:
-      - /mnt/data/prowlarr:/config
+      - /appdata/prowlarr:/config
     ports:
       - 9696:9696
     restart: unless-stopped
@@ -62,7 +62,7 @@ services:
       - PGID=0
       - TZ='Europe/Stockholm'
     volumes:
-      - /mnt/data/sonarr:/config
+      - /appdata/sonarr:/config
       - /downloads/tv:/tv #optional
       - /downloads:/downloads #optional
     ports:
