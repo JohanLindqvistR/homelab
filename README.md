@@ -60,8 +60,4 @@ ssh-copy-id -i ~/.ssh/ansible.pub 192.168.100.10
  # add to inventory first 
 ansible-playbook playbooks/setup-user.yaml -K -u draup
 
-mkdir /mnt/settings
-# in /etc/fstab
-//192.168.1.25/settings /mnt/settings cifs username=localuser,password=<pwd in keeper> 0 0
-sudo mount -a
  
