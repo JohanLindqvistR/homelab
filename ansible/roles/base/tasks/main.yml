@@ -1,3 +1,4 @@
 - import_tasks: install-docker.yaml
 - import_tasks: install-qemu-agent.yaml
-- import_tasks: mount-settings.yaml
+- import_tasks: unmount-settings.yaml
+- import_tasks: mount-appdata.yaml

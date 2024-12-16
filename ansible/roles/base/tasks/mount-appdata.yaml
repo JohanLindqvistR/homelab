@@ -1,0 +1,23 @@
+---
+- name: nfs utility present
+  ansible.builtin.apt:
+    name:
+      - nfs-common
+      - nfs4-acl-tools
+    state: present
+
+- name: check appdata mountpoint exist
+  ansible.builtin.file:
+    path: "{{ appdata_mountpoint }}"
+    state: directory
+    mode: "{{ permission }}"
+    owner: draup
+    group: draup
+
+- name: mount appdata nfs
+  ansible.posix.mount:
+    src: "{{ appdata_nfs }}"
+    path: "{{ appdata_mountpoint }}"
+    fstype: nfs
+    opts: "{{ opts }}"
+    state: mounted
