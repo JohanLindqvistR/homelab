@@ -12,3 +12,7 @@ plex.local
 [keepalived]
 draupswarm1.local conf_file=keepalived_master.conf
 draupswarm2.local conf_file=keepalived_backup.conf
+
+[new]
+draupmanager1.local
+draupmanager2.local
