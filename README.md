@@ -35,7 +35,6 @@ ssh alias
 
  # set ansible
  
-ansible-playbook playbooks/setup-user.yaml -K -u draup
 
 
  ansible-playbook playbooks/setup-user.yaml 
@@ -56,6 +55,10 @@ ansible-playbook playbooks/reboot-required.yaml
 # add keys to server
 ssh-copy-id -i ~/.ssh/id_ed25519.pub 192.168.100.10
 ssh-copy-id -i ~/.ssh/ansible.pub 192.168.100.10
+
+ # set ansible
+ # add to inventory first 
+ansible-playbook playbooks/setup-user.yaml -K -u draup
 
 mkdir /mnt/settings
 # in /etc/fstab
