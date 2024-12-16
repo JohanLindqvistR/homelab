@@ -1,0 +1,14 @@
+---
+- hosts: 192.168.100.14
+  become: true
+  gather_facts: false
+
+  tasks:
+
+  - blockinfile:
+      state: present
+      dest: /etc/hosts
+      content: |
+        {% for host in groups.gluster_nodes %}
+        {{ host }} {{ hostvars[host].hostname}}
+        {% endfor %}
