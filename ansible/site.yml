@@ -26,11 +26,13 @@
   become: true
   roles:
     - managers
+    - docker
 
 - hosts: workers
   become: true
   roles:
      - workers
+     - docker
 
 - hosts: plex
   become: true
