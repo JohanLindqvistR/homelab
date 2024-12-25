@@ -1,0 +1,62 @@
+---
+# Install bind
+- name: Install bind
+  ansible.builtin.apt:
+    name:
+      - bind9
+    update_cache: true
+
+# disable and stop systemd resolver
+- name: disable systemd resolver
+  service:
+    name: systemd-resolved.service
+    enabled: false
+
+- name: stop systemd resolver
+  service:
+    name: systemd-resolved.service
+    state: stopped
+    
+# update resolv.conf
+- name: updating resolv.conf
+  ansible.builtin.copy:
+    src: resolv.conf
+    dest: /etc/resolv.conf
+
+- name: updating bind options
+  ansible.builtin.copy:
+    src: named.conf.options
+    dest: /etc/bind/named.conf.options
+
+- name: create zone dir if not exist
+  file:
+    path: /etc/bind/zones
+    state: directory
+  when: type == "master"
+
+- name: updating draups home zone
+  ansible.builtin.copy:
+    src: db.draups.home
+    dest: /etc/bind/zones/db.draups.home
+  when: type == "master"
+
+- name: updating draups com zone
+  ansible.builtin.copy:
+    src: db.draups.com
+    dest: /etc/bind/zones/db.draups.com
+  when: type == "master"
+
+- name: updating named conf local
+  ansible.builtin.copy:
+    src: named.conf.local
+    dest: /etc/bind/named.conf.local
+  when: type == "master"
+
+- name: restart bind9 
+  service:
+    name: bind9
+    state: restarted
+  when: type == "master"
+
+  # setup secondary 
+
