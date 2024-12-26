@@ -1,0 +1,17 @@
+---
+- hosts: github
+  become: true
+  vars_files: 
+  - vars/vault.yaml
+
+  pre_tasks:
+  - name: update repository index (Ubuntu)
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+
+- hosts: github
+  become: true
+  roles:
+     - github

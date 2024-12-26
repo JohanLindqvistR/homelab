@@ -1,0 +1,13 @@
+---
+# Install bind
+- name: Install ansible
+  ansible.builtin.apt:
+    name:
+      - ansible
+    update_cache: true
+
+# Copy key
+- name: copy ansible key
+  ansible.builtin.copy:
+    src: ~/.ssh/ansible
+    dest: ~/.ssh/ansible
