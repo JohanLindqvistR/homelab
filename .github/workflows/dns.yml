@@ -9,11 +9,6 @@ jobs:
   run-ansible:
     runs-on: self-hosted
     steps:
-      - name: install ansible
-        run:
-          sudo apt update
-          sudo apt install -y ansible
-
       - name: run ansible playbook
         run:
           cd ansible
