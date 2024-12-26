@@ -35,8 +35,3 @@
      - workers
      - docker
      - metal
-
-- hosts: plex
-  become: true
-  roles:
-     - plex
