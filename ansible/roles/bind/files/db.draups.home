@@ -4,11 +4,28 @@
 ;
 $TTL    604800
 @       IN      SOA     ns1.draups.home. root.draups.home. (
-                              3         ; Serial
+                       20241226         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@      IN      NS      ns1.draups.home.
-ns1    IN      A       192.168.100.234
+@               IN      NS      ns1.draups.home.
+ns1             IN      A       192.168.100.234
+; VIP
+vip             IN      A       192.168.100.100
+; Docker Swarm
+draupmanager1   IN      A       192.168.100.14
+draupmanager2   IN      A       192.168.100.15
+draupworker1    IN      A       192.168.100.20
+draupworker2    IN      A       192.168.100.21
+; DNS
+draupdns1       IN      A       192.168.100.234
+draupdns2       IN      A       192.168.1.234
+; Proxmox
+drauphost1      IN      A       192.168.100.2
+drauphost2      IN      A       192.168.1.100
+; plex 
+plex            IN      A       192.168.1.30
+; nfs
+draupnfs        IN      A       192.168.1.42
