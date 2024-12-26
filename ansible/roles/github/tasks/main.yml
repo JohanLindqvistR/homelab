@@ -10,10 +10,10 @@
 - name: copy ansible key
   ansible.builtin.copy:
     src: ~/.ssh/ansible
-    dest: /home/ansible/.ssh/ansible
+    dest: /home/draup/.ssh/ansible
 
     # Copy key
 - name: copy vault key
   ansible.builtin.copy:
     src: ~/.vault.key
-    dest: /home/ansible/.vault.key
+    dest: /home/draup/.vault.key
