@@ -19,3 +19,6 @@ draupmanager2.draups.home conf_file=keepalived_backup.conf
 [dns]
 192.168.100.234 type=master
 192.168.1.234 type=secondary
+
+[github]
+drauprunner.draups.home
