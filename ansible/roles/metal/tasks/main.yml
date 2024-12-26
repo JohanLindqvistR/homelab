@@ -1,0 +1,11 @@
+---
+# update resolved.conf
+- name: updating resolved.conf
+  ansible.builtin.copy:
+    src: resolved.conf
+    dest: /etc/systemd/resolved.conf
+
+- name: restart systemd resolver
+  service:
+    name: systemd-resolved.service
+    state: restarted
