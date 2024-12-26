@@ -23,40 +23,52 @@
     src: resolv.conf
     dest: /etc/resolv.conf
 
-- name: updating bind options
-  ansible.builtin.copy:
-    src: named.conf.options
-    dest: /etc/bind/named.conf.options
-
 - name: create zone dir if not exist
   file:
     path: /etc/bind/zones
     state: directory
-  when: type == "master"
 
-- name: updating draups home zone
+# Update Master DNS
+
+- name: updating master bind options
   ansible.builtin.copy:
-    src: db.draups.home
-    dest: /etc/bind/zones/db.draups.home
+    src: master.named.conf.options
+    dest: /etc/bind/named.conf.options
   when: type == "master"
+  notify: restart-bind
 
-- name: updating draups com zone
+- name: updating master draups com zone
   ansible.builtin.copy:
     src: db.draups.com
     dest: /etc/bind/zones/db.draups.com
   when: type == "master"
+  notify: restart-bind
 
-- name: updating named conf local
+- name: updating master draups home zone
   ansible.builtin.copy:
-    src: named.conf.local
+    src: db.draups.home
+    dest: /etc/bind/zones/db.draups.home
+  when: type == "master"
+  notify: restart-bind
+
+- name: updating master named conf local
+  ansible.builtin.copy:
+    src: master.named.conf.local
     dest: /etc/bind/named.conf.local
   when: type == "master"
+  notify: restart-bind
 
-- name: restart bind9 
-  service:
-    name: bind9
-    state: restarted
-  when: type == "master"
+  # update secondary 
+  
+- name: updating secondary bind options
+  ansible.builtin.copy:
+    src: secondary.named.conf.options
+    dest: /etc/bind/named.conf.options
+  when: type == "secondary"
 
-  # setup secondary 
-
+- name: updating secondary named conf local
+  ansible.builtin.copy:
+    src: secondary.named.conf.local
+    dest: /etc/bind/named.conf.local
+  when: type == "secondary"
+  notify: restart-bind
