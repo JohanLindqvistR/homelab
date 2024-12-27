@@ -12,4 +12,4 @@ jobs:
       - name: run ansible playbook
         run: |
           cd ansible
-          ansible-playbook apt-grade.yml
+          ansible-playbook apt-upgrade.yml
