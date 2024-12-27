@@ -1,9 +1,14 @@
-
-- name: Check if restart is required
-  hosts: all
+- hosts: all
+  become: true
+  
   tasks:
     - name: Bare include (free-form)
       ansible.builtin.include_vars: ../vars/vault.yml
+
+    - name: apt
+      apt:
+        update_cache: yes
+        upgrade: 'yes'
 
     - name: Check that the reboot-required exists
       stat:
