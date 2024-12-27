@@ -23,3 +23,5 @@ plex            IN      CNAME   vip.draups.home.
 homeassistant   IN      CNAME   vip.draups.home.
 ; A Recs
 nas             IN      A       192.168.1.25
+pve1            IN      CNAME   drauphost1.draups.home.
+pve2            IN      CNAME   drauphost2.draups.home.
