@@ -12,4 +12,4 @@ jobs:
       - name: run ansible playbook
         run: |
           cd ansible
-          ansible-playbook playbooks/apt-update.yaml
+          ansible-playbook playbooks/apt-upgrade.yaml
