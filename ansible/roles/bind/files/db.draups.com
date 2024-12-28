@@ -4,7 +4,7 @@
 ;
 $TTL    604800
 @       IN      SOA     ns1.draups.com. root.draups.com. (
-                      202412281         ; Serial
+                      202412282         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
