@@ -31,3 +31,10 @@ services:
       placement:
         constraints: [node.role == worker]
     restart: unless-stopped
+    networks:
+      - pihole_network
+
+networks:
+  pihole_network:
+    driver: overlay
+    attachable: true
