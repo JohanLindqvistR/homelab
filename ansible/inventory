@@ -1,17 +1,17 @@
 [managers]
-draupmanager1.draups.home advertise_addr=192.168.100.14:2377
-draupmanager2.draups.home advertise_addr=192.168.100.15:2377
+draupmanager1.lan advertise_addr=192.168.100.14:2377
+draupmanager2.lan advertise_addr=192.168.100.15:2377
 
 [workers]
-draupworker1.draups.home
-draupworker2.draups.home
+draupworker1.lan
+draupworker2.lan
 
 [plex]
-plex.draups.home
+plex.lan
 
 [keepalived]
-draupmanager1.draups.home conf_file=keepalived_master.conf
-draupmanager2.draups.home conf_file=keepalived_backup.conf
+draupmanager1.lan conf_file=keepalived_master.conf
+draupmanager2.lan conf_file=keepalived_backup.conf
 
 [nfs]
 192.168.1.42
@@ -21,4 +21,4 @@ draupmanager2.draups.home conf_file=keepalived_backup.conf
 192.168.1.234 type=secondary
 
 [github]
-drauprunner.draups.home
+drauprunner.lan
