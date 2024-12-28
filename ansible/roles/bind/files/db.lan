@@ -1,16 +1,16 @@
 ;
-; $ORIGIN draups.home.
+; $ORIGIN lan.
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     ns1.draups.home. root.draups.home. (
+@       IN      SOA     ns1.lan. root.lan. (
                       202412268         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@               IN      NS      ns1.draups.home.
+@               IN      NS      ns1.lan.
 ns1             IN      A       192.168.100.234
 ; VIP
 vip             IN      A       192.168.100.100

@@ -44,10 +44,10 @@
   when: type == "master"
   notify: restart-bind
 
-- name: updating master draups home zone
+- name: updating master lan zone
   ansible.builtin.copy:
-    src: db.draups.home
-    dest: /etc/bind/zones/db.draups.home
+    src: db.lan
+    dest: /etc/bind/zones/db.lan
   when: type == "master"
   notify: restart-bind
 

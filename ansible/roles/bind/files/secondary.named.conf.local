@@ -8,7 +8,7 @@
 
 zone "draups.home" {
     type secondary;
-    file "/etc/bind/zones/db.draups.home";
+    file "/etc/bind/zones/db.lan";
     masters { 192.168.100.234; };
 };
 

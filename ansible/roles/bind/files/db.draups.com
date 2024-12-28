@@ -13,18 +13,18 @@ $TTL    604800
 @               IN      NS      ns1.draups.com.
 ns1             IN      A       192.168.100.234
 ; Aliases
-qbittorrent     IN      CNAME   vip.draups.home.
-portainer       IN      CNAME   vip.draups.home.
-prowlarr        IN      CNAME   vip.draups.home.
-sonarr          IN      CNAME   vip.draups.home.
-router          IN      CNAME   vip.draups.home.
-npm             IN      CNAME   vip.draups.home.
-plex            IN      CNAME   vip.draups.home.
-homeassistant   IN      CNAME   vip.draups.home.
-pve1            IN      CNAME   drauphost1.draups.home.
-pve2            IN      CNAME   drauphost2.draups.home.
-drauphost1.home IN      CNAME   drauphost1.draups.home.
-drauphost2.home IN      CNAME   drauphost2.draups.home.
+qbittorrent     IN      CNAME   vip.lan.
+portainer       IN      CNAME   vip.lan.
+prowlarr        IN      CNAME   vip.lan.
+sonarr          IN      CNAME   vip.lan.
+router          IN      CNAME   vip.lan.
+npm             IN      CNAME   vip.lan.
+plex            IN      CNAME   vip.lan.
+homeassistant   IN      CNAME   vip.lan.
+pve1            IN      CNAME   drauphost1.lan.
+pve2            IN      CNAME   drauphost2.lan.
+drauphost1.home IN      CNAME   drauphost1.lan.
+drauphost2.home IN      CNAME   drauphost2.lan.
 
 ; A Recs
 nas             IN      A       192.168.1.25
