@@ -31,3 +31,8 @@ plex            IN      A       192.168.1.30
 draupnfs        IN      A       192.168.1.42
 ; github actions
 drauprunner     IN      A       192.168.1.160
+; Docker Swarm
+swarm           IN      A       192.168.100.14
+swarm           IN      A       192.168.100.15
+swarm           IN      A       192.168.100.20
+swarm           IN      A       192.168.100.21
