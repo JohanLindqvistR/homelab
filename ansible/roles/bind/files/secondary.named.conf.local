@@ -6,7 +6,7 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "draups.home" {
+zone "lan" {
     type secondary;
     file "/etc/bind/zones/db.lan";
     masters { 192.168.100.234; };
