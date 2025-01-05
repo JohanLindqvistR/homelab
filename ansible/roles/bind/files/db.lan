@@ -4,7 +4,7 @@
 ;
 $TTL    604800
 @       IN      SOA     ns1.lan. root.lan. (
-                      202412281         ; Serial
+                      202501051         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
@@ -36,3 +36,5 @@ swarm           IN      A       192.168.100.14
 swarm           IN      A       192.168.100.15
 swarm           IN      A       192.168.100.20
 swarm           IN      A       192.168.100.21
+; HASS
+homeassistant   IN      A       192.168.1.184
