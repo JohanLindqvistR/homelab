@@ -13,6 +13,7 @@ services:
       - "82:80/tcp"
     environment:
       TZ: 'Europe/Stockholm'
+      FTLCONF_webserver_api_password: ''
       # WEBPASSWORD: 'set a secure password here or it will be random'
     # Volumes store your data between container upgrades
     volumes:
