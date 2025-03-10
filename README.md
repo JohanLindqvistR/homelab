@@ -65,4 +65,11 @@ sudo rm -f /etc/resolv.conf
 sudo ln -sv /run/systemd/resolve/resolv.conf /etc/resolv.conf
 sudo systemctl restart systemd-resolved.service
 
+
+ # Ubuntu Desktop
+ sudo apt install xrdp -y
+ sudo systemctl start xrdp
+ sudo systemctl enable xrdp
+ sudo adduser xrdp ssl-cert
+ sudo systemctl restart xrdp
  
