@@ -27,11 +27,9 @@
   roles:
     - managers
     - docker
-    - metal
 
 - hosts: workers
   become: true
   roles:
      - workers
      - docker
-     - metal
