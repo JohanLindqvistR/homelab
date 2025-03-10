@@ -60,4 +60,11 @@ ssh-copy-id -i ~/.ssh/ansible.pub 192.168.100.10
  # add to inventory first 
 ansible-playbook playbooks/setup-user.yaml -K -u draup
 
+
+ # Ubuntu Desktop
+ sudo apt install xrdp -y
+ sudo systemctl start xrdp
+ sudo systemctl enable xrdp
+ sudo adduser xrdp ssl-cert
+ sudo systemctl restart xrdp
  
