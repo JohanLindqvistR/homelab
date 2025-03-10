@@ -45,7 +45,7 @@ ansible-playbook site.yml
 
 
 update servers
-ansible-playbook playbooks/apt-update.yaml
+ansible-playbook playbooks/apt-upgrade.yaml
 
 check if boor is needed
 ansible-playbook playbooks/reboot-required.yaml
@@ -57,7 +57,12 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub 192.168.100.10
 ssh-copy-id -i ~/.ssh/ansible.pub 192.168.100.10
 
  # set ansible
- # add to inventory first 
+ # add to inventory first
 ansible-playbook playbooks/setup-user.yaml -K -u draup
+
+# Ubuntu dns
+sudo rm -f /etc/resolv.conf
+sudo ln -sv /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo systemctl restart systemd-resolved.service
 
  
