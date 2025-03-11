@@ -1,0 +1,5 @@
+---
+- hosts: managers, workers
+  become: true
+  roles:
+    - metal
