@@ -1,3 +1,4 @@
+
 - name: Update dns.hosts
   ansible.builtin.command:
     cmd: pihole-FTL --config dns.hosts '{{ pihole_dns_records | to_json }}'

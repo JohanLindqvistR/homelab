@@ -37,3 +37,4 @@ pihole_dns_cname_records:
   - nas.home.draups.com,nas.lan
   - npm.draups.com,vip.lan 
   - test.home.draups.com,vip.lan
+  - portainer2.home.draups.com,vip.lan
