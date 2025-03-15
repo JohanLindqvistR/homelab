@@ -1,0 +1,7 @@
+---
+- hosts: arr
+  become: true
+  roles:
+    - base
+    - docker
+    - workers
