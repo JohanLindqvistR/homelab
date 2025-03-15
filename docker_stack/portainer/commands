@@ -3,5 +3,5 @@ curl -L https://raw.githubusercontent.com/JohanLindqvistR/homelab/main/docker_st
 docker stack deploy -c portainer-agent-stack.yaml portainer
 
 local
-curl -L https://raw.githubusercontent.com/JohanLindqvistR/homelab/main/docker_stack/portainer/portainer-local-stack.yaml -o portainer-agent-stack.yaml
-docker stack deploy -c portainer-local-stack.yaml portainer
+curl -L https://raw.githubusercontent.com/JohanLindqvistR/homelab/main/docker_stack/portainer/portainer-local-stack.yaml -o docker-compose.yaml
+docker compose up -d
