@@ -1,3 +1,11 @@
-- import_tasks: a-records.yml
-- import_tasks: c-names.yml
-- import_tasks: deletesid.yml
+- name: Update dns.hosts
+  ansible.builtin.command:
+    cmd: pihole-FTL --config dns.hosts '{{ pihole_dns_records | to_json }}'
+  register: ftl_dns_hosts_response
+  changed_when: ftl_dns_hosts_response.rc != 0
+
+- name: Update dns.cnameRecords
+  ansible.builtin.command:
+    cmd: pihole-FTL --config dns.cnameRecords '{{ pihole_dns_cname_records | to_json }}'
+  register: ftl_dns_cname_records_response
+  changed_when: ftl_dns_cname_records_response.rc != 0

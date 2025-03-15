@@ -1,6 +1,0 @@
-- name: Delete the sid to logout
-  shell: |
-    curl -X DELETE "{{ endpoint }}/auth" \
-      -H "accept: application/json" \
-      -H "content-type: application/json" \
-      -H "X-FTL-SID: {{ api_sid }}"
