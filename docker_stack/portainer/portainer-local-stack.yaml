@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  portainer:
+    image: portainer/portainer-ce:2.27.1
+    command: -H tcp://tasks.agent:9001 --tlsskipverify
+    ports:
+      - "9443:9443"
+      - "9000:9000"
+      - "8000:8000"
+    volumes:
+      - type: bind
+        source: /appdata/portainer2
+        target: /data
+    restart: unless-stopped
