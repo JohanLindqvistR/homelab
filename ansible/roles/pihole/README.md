@@ -7,3 +7,8 @@ sudo su -
 sudo apt install unbound
 sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
 sudo service unbound restart
+
+
+troubleshoot
+resintall config
+sudo apt -o Dpkg::Options::="--force-confmiss" install --reinstall unbound
