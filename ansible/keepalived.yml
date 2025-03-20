@@ -1,0 +1,5 @@
+---
+- hosts: keepalived
+  become: true
+  roles:
+    - keepalived

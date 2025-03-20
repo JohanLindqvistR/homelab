@@ -10,8 +10,10 @@ draupworker2.lan
 plex.lan
 
 [keepalived]
-draupmanager1.lan conf_file=keepalived_master.conf
-draupmanager2.lan conf_file=keepalived_backup.conf
+draupmanager1.lan conf_file=npm_master.conf
+draupmanager2.lan conf_file=npm_backup.conf
+draup-pihole1.lan conf_file=pihole_master.conf
+draup-pihole2.lan conf_file=pihole_backup.conf
 
 [nfs]
 192.168.1.42
@@ -26,8 +28,8 @@ drauprunner.lan
 [pihole]
 192.168.1.45 endpoint=192.168.1.45/api
 192.168.100.45 endpoint=192.168.100.45/api
-draupworker1.lan endpoint=draupworker1.lan/api
-draupworker2.lan endpoint=draupworker2.lan/api
+192.168.100.201 endpoint=192.168.100.201/api
+192.168.100.202 endpoint=192.168.100.202/api
 
 [arr]
 192.168.1.118
