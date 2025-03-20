@@ -16,3 +16,7 @@ sudo apt -o Dpkg::Options::="--force-confmiss" install --reinstall unbound
 
 docker exec -it <mycontainer> sh
 pihole setpassword
+
+$  hostnamectl set-hostname NEW-HOST
+$  hostname
+NEW-HOST
