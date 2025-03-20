@@ -10,5 +10,9 @@ sudo service unbound restart
 
 
 troubleshoot
-resintall config
+reinstall config
 sudo apt -o Dpkg::Options::="--force-confmiss" install --reinstall unbound
+
+
+docker exec -it <mycontainer> sh
+pihole setpassword
