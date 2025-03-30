@@ -1,12 +1,12 @@
 ---
-- hosts: 192.168.100.14
+- hosts: managers
   become: true
   gather_facts: false
 
   tasks:
 
   - blockinfile:
-      state: present
+      state: absent
       dest: /etc/hosts
       content: |
         {% for host in groups.gluster_nodes %}
