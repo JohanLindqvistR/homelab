@@ -1,8 +1,10 @@
 pihole_dns_records:
   - 192.168.100.100 vip.lan
   - 192.168.1.118 docker.lan
-  - 192.168.100.14 draupmanager1.lan
-  - 192.168.100.15 draupmanager2.lan
+  - 192.168.100.101 draup-npm1.lan
+  - 192.168.100.102 draup-npm2.lan
+  - 192.168.100.101 draupmanager1.lan
+  - 192.168.100.102 draupmanager2.lan
   - 192.168.100.201 draupworker1.lan
   - 192.168.100.202 draupworker2.lan
   - 192.168.100.201 draup-pihole1.lan
