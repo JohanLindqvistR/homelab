@@ -1,35 +1,21 @@
-[managers]
-draupmanager1.lan advertise_addr=192.168.100.14:2377
-draupmanager2.lan advertise_addr=192.168.100.15:2377
-
-[workers]
-draupworker1.lan
-draupworker2.lan
-
 [plex]
 plex.lan
 
 [keepalived]
-draupmanager1.lan conf_file=npm_master.conf
-draupmanager2.lan conf_file=npm_backup.conf
+draup-npm1.lan conf_file=npm_master.conf
+draup-npm2.lan conf_file=npm_backup.conf
 draup-pihole1.lan conf_file=pihole_master.conf
 draup-pihole2.lan conf_file=pihole_backup.conf
 
 [nfs]
-192.168.1.42
-
-[dns]
-192.168.100.234 type=master
-192.168.1.234 type=secondary
+draupnfs.lan
 
 [github]
 drauprunner.lan
 
 [pihole]
-192.168.1.45 endpoint=192.168.1.45/api
-192.168.100.45 endpoint=192.168.100.45/api
 192.168.100.201 endpoint=192.168.100.201/api
 192.168.100.202 endpoint=192.168.100.202/api
 
 [arr]
-192.168.1.118
+arrstack.lan
