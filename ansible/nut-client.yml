@@ -1,0 +1,5 @@
+---
+- hosts: nut
+  become: true
+  roles:
+    - nut-client

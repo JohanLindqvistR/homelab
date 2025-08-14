@@ -1,0 +1,9 @@
+---
+nut_client_ups: serverrack
+nut_client_server: 192.168.100.165
+nut_client_username: observer
+nut_client_password: Hemligt1
+nut_client_type: secondary
+
+nut_client_state: started
+nut_client_enabled: true
