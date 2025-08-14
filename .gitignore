@@ -1,2 +1,4 @@
 docker_stack/traefik/.env
 ansible/playbooks/discord.yaml
+packer/ubuntu-server-noble/credentials.pkr.hcl
+packer/ubuntu-server-noble/packer.exe

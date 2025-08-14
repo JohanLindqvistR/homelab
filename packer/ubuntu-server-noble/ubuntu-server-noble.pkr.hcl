@@ -111,16 +111,16 @@ source "proxmox-iso" "ubuntu-server-noble" {
     ssh_username            = "draup"
 
     # (Option 1) Add your Password here
-    ssh_password        = "packerpwd"
+    # ssh_password        = "packerpwd"
     # - or -
     # (Option 2) Add your Private SSH KEY file here
     # ssh_agent_auth = true
-    # ssh_private_key_file    = "~/.ssh/id_rsa"
+    ssh_private_key_file    = "~/.ssh/id_draup"
 
 
     # Raise the timeout, when installation takes longer
-    ssh_timeout             = "30m"
-    ssh_pty                 = true
+    ssh_timeout             = "10m"
+    ssh_pty                 = false
 }
 
 # Build Definition to create the VM Template
