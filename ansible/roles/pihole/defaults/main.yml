@@ -23,6 +23,7 @@ pihole_dns_records:
   - 192.168.1.184 homeassistant.lan
   - 192.168.1.25 nas.lan
   - 192.168.1.118 arrstack.lan
+  - 192.168.100.131 vm-docker-devops.lan
 
 
 
@@ -42,3 +43,4 @@ pihole_dns_cname_records:
   - npm.draups.com,vip.lan 
   - test.home.draups.com,vip.lan
   - portainer2.home.draups.com,vip.lan
+  - gitlab.home.draups.com,vip.lan
