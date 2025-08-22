@@ -32,9 +32,9 @@ source "proxmox-iso" "ubuntu-server-noble" {
 
     # VM General Settings
     node                 = "draup-pve1"
-    vm_id                = "9000"
-    vm_name              = "ubuntu-server-noble"
-    template_description = "Ubuntu Server Noble Image"
+    vm_id                = "9001"
+    vm_name              = "ubuntu-server-noble-docker"
+    template_description = "Ubuntu Server Noble Image with Docker"
 
     # VM OS Settings
     # (Option 1) Local ISO File
@@ -156,6 +156,14 @@ build {
         inline = [ "sudo cp /tmp/99-pve.cfg /etc/cloud/cloud.cfg.d/99-pve.cfg" ]
     }
 
-    # Add additional provisioning scripts here
-    # ...
+    # Provisioning the VM Template with Docker Installation #4
+    provisioner "shell" {
+        inline = [
+            "sudo apt-get install -y ca-certificates curl gnupg lsb-release",
+            "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg",
+            "echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null",
+            "sudo apt-get -y update",
+            "sudo apt-get install -y docker-ce docker-ce-cli containerd.io"
+        ]
+    }
 }

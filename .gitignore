@@ -1,5 +1,6 @@
 docker_stack/traefik/.env
 ansible/playbooks/discord.yaml
+<<<<<<< HEAD
 packer/ubuntu-server-noble/downloaded_iso_path/73b4f11c1cb8dc57fb78ad9d7b5baf123159250e.iso
 packer/ubuntu-server-noble/downloaded_iso_path/73b4f11c1cb8dc57fb78ad9d7b5baf123159250e.iso.lock
 packer/ubuntu-server-noble/downloaded_iso_path/ed98c57061f75178af0d15d9a5f83487504f970b.iso
@@ -8,3 +9,7 @@ terraform/test/.terraform/providers/registry.terraform.io/telmate/proxmox/3.0.2-
 terraform/test/.terraform/providers/registry.terraform.io/telmate/proxmox/3.0.2-rc03/linux_amd64/README.md
 terraform/test/.terraform.lock.hcl
 terraform/test/.terraform/providers/registry.terraform.io/telmate/proxmox/3.0.2-rc03/linux_amd64/terraform-provider-proxmox_v3.0.2-rc03
+=======
+packer/ubuntu-server-noble/credentials.pkr.hcl
+packer/ubuntu-server-noble/packer.exe
+>>>>>>> 8f6acb67a51836ae04fdd06eb0ae796d1ae95544

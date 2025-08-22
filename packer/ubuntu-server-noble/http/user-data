@@ -3,7 +3,7 @@ autoinstall:
   version: 1
   locale: en_US
   keyboard:
-    layout: sv
+    layout: se
   ssh:
     install-server: true
     allow-pw: true
@@ -27,7 +27,7 @@ autoinstall:
         lock-passwd: false
         sudo: ALL=(ALL) NOPASSWD:ALL
         shell: /bin/bash
-        passwd: packerpwd
+        # passwd: packerpwd
         # - or -
-        # ssh_authorized_keys:
-        #   - your-ssh-key
+        ssh_authorized_keys:
+          - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIoQSVnXGHkQ1kwP/lgibmsI6gIJ4FbS5d7Kki2txTJ draup@Draupgamer2"
