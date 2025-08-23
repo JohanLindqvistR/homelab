@@ -2,3 +2,6 @@ docker_stack/traefik/.env
 ansible/playbooks/discord.yaml
 packer/ubuntu-server-noble/credentials.pkr.hcl
 packer/ubuntu-server-noble/packer.exe
+proxmox/terraform/auto.tfvars
+proxmox/terraform/variables.auto.tfvars
+proxmox/terraform/terraform.exe
